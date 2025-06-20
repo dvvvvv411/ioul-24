@@ -127,7 +127,7 @@ const HeroSection = () => {
       // Transform request body to match backend expectations
       const orderData = {
         shop_id: fiouelConfig.shopId,
-        product: selectedProduct.id, // Changed from selectedProduct.name to selectedProduct.id
+        product: selectedProduct.id,
         liters: liters,
         price_per_liter: selectedProduct.pricePerLiter,
         delivery_fee: deliveryFee,
@@ -136,7 +136,7 @@ const HeroSection = () => {
 
       console.log("Order data:", orderData);
 
-      // Create order token - fixed endpoint URL
+      // Create order token
       const response = await fetch(`${fiouelConfig.backendUrl}/create-order-token`, {
         method: 'POST',
         headers: {
@@ -150,13 +150,18 @@ const HeroSection = () => {
       }
 
       const data = await response.json();
-      console.log("Order token created:", data);
+      console.log("Backend response:", data);
 
-      if (data.url) {
+      // Expect token from backend, not URL
+      if (data.token) {
+        // Construct checkout URL in frontend
+        const checkoutUrl = `${fiouelConfig.checkoutUrl}?token=${data.token}`;
+        console.log("Redirecting to checkout:", checkoutUrl);
+        
         // Redirect to checkout page in new tab
-        window.open(data.url, '_blank');
+        window.open(checkoutUrl, '_blank');
       } else {
-        throw new Error('No checkout URL received');
+        throw new Error('No token received from backend');
       }
 
     } catch (error) {
