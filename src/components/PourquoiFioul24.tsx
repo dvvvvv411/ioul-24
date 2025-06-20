@@ -26,6 +26,12 @@ const PourquoiFioul24 = () => {
     }
   ];
 
+  // Destructure icons for proper JSX usage
+  const FirstIcon = reasons[0].icon;
+  const SecondIcon = reasons[1].icon;
+  const ThirdIcon = reasons[2].icon;
+  const FourthIcon = reasons[3].icon;
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -35,7 +41,7 @@ const PourquoiFioul24 = () => {
             {/* Première boîte info */}
             <Card className="bg-gradient-to-br from-blue-50 to-blue-100 cozy-shadow border-0 organic-border gentle-hover lg:row-span-1">
               <CardContent className="p-6 text-center">
-                <reasons[0].icon className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+                <FirstIcon className="w-8 h-8 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{reasons[0].title}</h3>
                 <p className="text-gray-600 text-sm">{reasons[0].description}</p>
               </CardContent>
@@ -67,7 +73,7 @@ const PourquoiFioul24 = () => {
             {/* Deuxième boîte info */}
             <Card className="bg-gradient-to-br from-green-50 to-green-100 cozy-shadow border-0 organic-border gentle-hover lg:row-span-1">
               <CardContent className="p-6 text-center">
-                <reasons[1].icon className="w-8 h-8 text-green-600 mx-auto mb-4" />
+                <SecondIcon className="w-8 h-8 text-green-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{reasons[1].title}</h3>
                 <p className="text-gray-600 text-sm">{reasons[1].description}</p>
               </CardContent>
@@ -76,7 +82,7 @@ const PourquoiFioul24 = () => {
             {/* Troisième boîte info */}
             <Card className="bg-gradient-to-br from-orange-50 to-orange-100 cozy-shadow border-0 organic-border gentle-hover lg:row-span-1">
               <CardContent className="p-6 text-center">
-                <reasons[2].icon className="w-8 h-8 text-orange-600 mx-auto mb-4" />
+                <ThirdIcon className="w-8 h-8 text-orange-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{reasons[2].title}</h3>
                 <p className="text-gray-600 text-sm">{reasons[2].description}</p>
               </CardContent>
@@ -85,7 +91,7 @@ const PourquoiFioul24 = () => {
             {/* Quatrième boîte info */}
             <Card className="bg-gradient-to-br from-red-50 to-red-100 cozy-shadow border-0 organic-border gentle-hover lg:row-span-1">
               <CardContent className="p-6 text-center">
-                <reasons[3].icon className="w-8 h-8 text-red-600 mx-auto mb-4" />
+                <FourthIcon className="w-8 h-8 text-red-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{reasons[3].title}</h3>
                 <p className="text-gray-600 text-sm">{reasons[3].description}</p>
               </CardContent>
