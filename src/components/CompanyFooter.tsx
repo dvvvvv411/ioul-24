@@ -48,18 +48,6 @@ const CompanyFooter = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Horaires</p>
-                  <p className="text-gray-300">
-                    Lun-Ven: 8h-18h<br />
-                    Sam: 9h-17h<br />
-                    Urgences: 24h/24
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -67,20 +55,40 @@ const CompanyFooter = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-white mb-4">Nos Services</h4>
             <ul className="space-y-3 text-gray-300">
-              <li className="hover:text-red-400 transition-colors cursor-pointer">
-                Livraison fioul domestique
+              <li>
+                <Link to="/services" className="hover:text-red-400 transition-colors">
+                  Services
+                </Link>
               </li>
-              <li className="hover:text-red-400 transition-colors cursor-pointer">
-                Fioul standard et premium
+              <li>
+                <Link to="/about" className="hover:text-red-400 transition-colors">
+                  À propos
+                </Link>
               </li>
-              <li className="hover:text-red-400 transition-colors cursor-pointer">
-                Livraison express 24h
+              <li>
+                <Link to="/contact" className="hover:text-red-400 transition-colors">
+                  Contact
+                </Link>
               </li>
-              <li className="hover:text-red-400 transition-colors cursor-pointer">
-                Service clientèle 7j/7
+              <li>
+                <Link to="/mentions-legales" className="hover:text-red-400 transition-colors">
+                  Mentions légales
+                </Link>
               </li>
-              <li className="hover:text-red-400 transition-colors cursor-pointer">
-                Devis gratuit en ligne
+              <li>
+                <Link to="/cgv" className="hover:text-red-400 transition-colors">
+                  CGV
+                </Link>
+              </li>
+              <li>
+                <Link to="/politique-confidentialite" className="hover:text-red-400 transition-colors">
+                  Politique de confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link to="/conditions-livraison" className="hover:text-red-400 transition-colors">
+                  Conditions de livraison
+                </Link>
               </li>
             </ul>
           </div>
@@ -88,14 +96,7 @@ const CompanyFooter = () => {
           {/* Legal Info */}
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-white mb-4">Informations légales</h4>
-            <div className="text-gray-300 space-y-2 text-sm">
-              <p><strong>Fuel 2000 Transports Sàrl</strong></p>
-              <p>SIREN: 500830567</p>
-              <p>SIRET: 50083056700011</p>
-              <p>N° TVA: FR66603090631</p>
-              <p>Gérant: William Boscher</p>
-            </div>
-
+            
             <div className="space-y-3 pt-4">
               <Link to="/mentions-legales" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
                 Mentions légales
