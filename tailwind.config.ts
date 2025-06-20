@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Warme Fioul-24 Farben
+				'warm-red': '#dc2626',
+				'warm-orange': '#f97316',
+				'warm-cream': '#fef7f0',
+				'warm-gray': '#f3f4f6',
+				'cozy-brown': '#78716c'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +91,39 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				// Warme, einladende Animationen
+				'gentle-bounce': {
+					'0%, 100%': {
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(-5px)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				'warm-pulse': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'gentle-bounce': 'gentle-bounce 2s infinite',
+				'warm-pulse': 'warm-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
+			spacing: {
+				'18': '4.5rem',
+				'88': '22rem',
 			}
 		}
 	},
