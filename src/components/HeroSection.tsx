@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -167,7 +166,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right side - Improved Price Calculator with better contrast */}
-          <Card className="cozy-shadow border-0 bg-white backdrop-blur-sm organic-border">
+          <Card className="cozy-shadow border-0 bg-white backdrop-blur-sm organic-border price-calculator-section">
             <CardHeader className="warm-gradient text-white organic-border rounded-b-none">
               <CardTitle className="text-2xl text-center font-medium">Découvrez nos prix</CardTitle>
               <p className="text-center text-red-50 font-light">Devis personnalisé en quelques clics</p>

@@ -1,11 +1,32 @@
 
 import { Button } from "@/components/ui/button";
 import { Phone, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const scrollToPriceCalculator = () => {
+    // If not on homepage, navigate first
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const priceCalculatorSection = document.querySelector('.price-calculator-section');
+        if (priceCalculatorSection) {
+          priceCalculatorSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on homepage, just scroll
+      const priceCalculatorSection = document.querySelector('.price-calculator-section');
+      if (priceCalculatorSection) {
+        priceCalculatorSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg transition-all duration-300">
@@ -49,7 +70,10 @@ const Header = () => {
                 Appelez-nous: +33 1 84 60 78 93
               </span>
             </div>
-            <Button className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <Button 
+              onClick={scrollToPriceCalculator}
+              className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
               Commandez maintenant
             </Button>
           </div>
@@ -112,7 +136,13 @@ const Header = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 <span>+33 1 84 60 78 93</span>
               </div>
-              <Button className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold mx-2">
+              <Button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  scrollToPriceCalculator();
+                }}
+                className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold mx-2"
+              >
                 Commandez maintenant
               </Button>
             </nav>
