@@ -1,28 +1,15 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
-
 const NotreExpertise = () => {
-  const expertisePoints = [
-    "Spécialisés en livraison Île-de-France",
-    "Équipe experte et qualifiée",
-    "Service personnalisé et à l'écoute",
-    "Relation de confiance depuis 2008"
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-warm-cream to-orange-25">
+  const expertisePoints = ["Spécialisés en livraison Île-de-France", "Équipe experte et qualifiée", "Service personnalisé et à l'écoute", "Relation de confiance depuis 2008"];
+  return <section className="py-20 bg-gradient-to-br from-warm-cream to-orange-25">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image côté gauche */}
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-red-200 to-orange-200 rounded-3xl overflow-hidden cozy-shadow">
-              <img 
-                src="https://i.imgur.com/QifWs5P.jpeg" 
-                alt="Équipe Fioul-24" 
-                className="w-full h-full object-cover object-left-center"
-              />
+              <img alt="Équipe Fioul-24" className="w-full h-full object-cover object-left-center" src="https://i.imgur.com/5skDDm1.jpeg" />
             </div>
           </div>
 
@@ -46,12 +33,10 @@ const NotreExpertise = () => {
               </p>
 
               <div className="space-y-4 mb-8">
-                {expertisePoints.map((point, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {expertisePoints.map((point, index) => <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{point}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-xl font-semibold gentle-hover">
@@ -61,8 +46,6 @@ const NotreExpertise = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default NotreExpertise;
