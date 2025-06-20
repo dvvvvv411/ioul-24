@@ -137,8 +137,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - Cozy Price Calculator */}
-          <Card className="cozy-shadow border-0 bg-white/90 backdrop-blur-sm organic-border">
+          {/* Right side - Improved Price Calculator with better contrast */}
+          <Card className="cozy-shadow border-0 bg-white backdrop-blur-sm organic-border">
             <CardHeader className="warm-gradient text-white organic-border rounded-b-none">
               <CardTitle className="text-2xl text-center font-medium">Découvrez nos prix</CardTitle>
               <p className="text-center text-red-50 font-light">Devis personnalisé en quelques clics</p>
@@ -156,7 +156,7 @@ const HeroSection = () => {
                   placeholder="Ex: 75001"
                   value={postalCode}
                   onChange={(e) => setPostalCode(e.target.value)}
-                  className="border-warm-gray/30 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-warm-cream/50"
+                  className="border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50"
                 />
               </div>
 
@@ -172,11 +172,11 @@ const HeroSection = () => {
                   max={fiouelConfig.limits.maxLiters}
                   value={liters}
                   onChange={(e) => setLiters(Number(e.target.value))}
-                  className="border-warm-gray/30 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-warm-cream/50"
+                  className="border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50"
                 />
               </div>
 
-              {/* Fuel Type - Cozy design */}
+              {/* Fuel Type - Improved contrast */}
               <div className="space-y-4">
                 <Label className="text-gray-700 font-medium">Choisissez votre fioul</Label>
                 <div className="space-y-3">
@@ -190,8 +190,8 @@ const HeroSection = () => {
                       onChange={(e) => setFuelType(e.target.value)}
                       className="peer hidden"
                     />
-                    <label htmlFor="standard" className="flex items-center space-x-4 p-4 border-2 rounded-xl cursor-pointer transition-all peer-checked:border-red-400 peer-checked:bg-red-50/50 hover:bg-warm-cream/30 border-warm-gray/20">
-                      <div className="w-4 h-4 rounded-full border-2 border-gray-300 peer-checked:border-red-500 peer-checked:bg-red-500 relative">
+                    <label htmlFor="standard" className="flex items-center space-x-4 p-4 border-2 rounded-xl cursor-pointer transition-all peer-checked:border-red-400 peer-checked:bg-red-50 hover:bg-gray-50 border-gray-200 bg-gray-50">
+                      <div className="w-4 h-4 rounded-full border-2 border-gray-400 peer-checked:border-red-500 peer-checked:bg-red-500 relative">
                         <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 peer-checked:opacity-100"></div>
                       </div>
                       <div className="flex-1">
@@ -213,8 +213,8 @@ const HeroSection = () => {
                       onChange={(e) => setFuelType(e.target.value)}
                       className="peer hidden"
                     />
-                    <label htmlFor="premium" className="flex items-center space-x-4 p-4 border-2 rounded-xl cursor-pointer transition-all peer-checked:border-red-400 peer-checked:bg-red-50/50 hover:bg-warm-cream/30 border-warm-gray/20">
-                      <div className="w-4 h-4 rounded-full border-2 border-gray-300 peer-checked:border-red-500 peer-checked:bg-red-500 relative">
+                    <label htmlFor="premium" className="flex items-center space-x-4 p-4 border-2 rounded-xl cursor-pointer transition-all peer-checked:border-red-400 peer-checked:bg-red-50 hover:bg-gray-50 border-gray-200 bg-gray-50">
+                      <div className="w-4 h-4 rounded-full border-2 border-gray-400 peer-checked:border-red-500 peer-checked:bg-red-500 relative">
                         <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 peer-checked:opacity-100"></div>
                       </div>
                       <div className="flex-1">
@@ -283,7 +283,7 @@ const HeroSection = () => {
               )}
 
               {/* Trust message */}
-              <div className="text-center mt-6 p-4 bg-warm-cream/50 rounded-xl">
+              <div className="text-center mt-6 p-4 bg-gray-50 rounded-xl">
                 <p className="text-sm text-gray-600">
                   <Heart className="inline w-4 h-4 text-red-500 mr-1" />
                   Plus de 10 000 familles nous font confiance
