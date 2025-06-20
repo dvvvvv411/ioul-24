@@ -33,7 +33,7 @@ const PourquoiFioul24 = () => {
   const FourthIcon = reasons[3].icon;
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-red-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Layout en grille héro */}

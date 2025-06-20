@@ -11,7 +11,7 @@ import CompanyFooter from "@/components/CompanyFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-orange-50">
       <Header />
       <HeroSection />
       <NosAvantages />
