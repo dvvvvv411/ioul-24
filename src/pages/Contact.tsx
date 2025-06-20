@@ -4,215 +4,182 @@ import CompanyFooter from "@/components/CompanyFooter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, AlertCircle } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Téléphone",
-      content: "+33 1 84 60 78 93",
-      subtitle: "Lundi-Vendredi 8h-18h"
-    },
-    {
-      icon: AlertCircle,
-      title: "Urgences 24h/24",
-      content: "+33 1 84 60 78 93",
-      subtitle: "Service d'urgence disponible"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      content: "info@fioul-24.fr",
-      subtitle: "Réponse sous 2h"
-    },
-    {
-      icon: MapPin,
-      title: "Adresse",
-      content: "23 rue de la Porte d'Aubervilliers",
-      subtitle: "75018 Paris, France"
-    }
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Demande de contact:", formData);
+    alert("Votre demande a été envoyée ! Nous vous recontactons sous 2h.");
+  };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-orange-50">
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contactez-nous</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Notre équipe est à votre disposition pour répondre à toutes vos questions
+          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm mb-6">
+            <Phone className="w-4 h-4 text-red-500 fill-current" />
+            <span className="text-sm font-medium text-gray-700">Nous sommes là pour vous</span>
+          </div>
+
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">Rapide</span>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Une équipe familiale à votre écoute pour tous vos besoins en fioul
           </p>
         </div>
       </section>
 
-      {/* Contact Info & Form */}
-      <section className="py-20">
+      {/* Section 1: Contact Information & Quick Contact */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Nos Coordonnées
-              </h2>
-              <div className="space-y-6 mb-8">
-                {contactInfo.map((info, index) => (
-                  <Card key={index} className="shadow-lg border-0">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                          <info.icon className="w-6 h-6 text-red-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-gray-900 mb-1">
-                            {info.title}
-                          </h3>
-                          <p className="text-lg text-gray-800 font-semibold">
-                            {info.content}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            {info.subtitle}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+              Contactez <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">notre équipe</span>
+            </h2>
 
-              {/* Opening Hours */}
-              <Card className="shadow-lg border-0">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-red-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 mb-3">Horaires d'ouverture</h3>
-                      <div className="space-y-2 text-gray-700">
-                        <p><strong>Lundi - Vendredi :</strong> 8h00 - 18h00</p>
-                        <p><strong>Samedi :</strong> 9h00 - 12h00</p>
-                        <p><strong>Dimanche :</strong> Fermé</p>
-                        <p className="text-red-600 font-semibold mt-3">
-                          <strong>Urgences :</strong> 24h/24 - 7j/7
-                        </p>
-                      </div>
-                    </div>
+            <div className="grid lg:grid-cols-3 gap-8 mb-12">
+              {/* Téléphone */}
+              <Card className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border">
+                <CardContent className="p-8 text-center">
+                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Téléphone</h3>
+                  <p className="text-2xl font-bold text-red-600 mb-2">01 84 60 78 93</p>
+                  <p className="text-gray-600 text-sm flex items-center justify-center">
+                    <Clock className="w-4 h-4 mr-2" />
+                    Lundi-Vendredi 8h-18h
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Email */}
+              <Card className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border">
+                <CardContent className="p-8 text-center">
+                  <div className="bg-gradient-to-br from-green-100 to-green-200 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
+                  <p className="text-xl font-bold text-red-600 mb-2">info@fioul-24.fr</p>
+                  <p className="text-gray-600 text-sm">Réponse sous 2h</p>
+                </CardContent>
+              </Card>
+
+              {/* Horaires */}
+              <Card className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border">
+                <CardContent className="p-8 text-center">
+                  <div className="bg-gradient-to-br from-orange-100 to-red-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Horaires</h3>
+                  <div className="text-gray-700 text-sm space-y-1">
+                    <p><strong>Lundi-Vendredi:</strong> 8h-18h</p>
+                    <p><strong>Samedi:</strong> 9h-12h</p>
+                    <p className="text-red-600 font-semibold"><strong>Urgences:</strong> 24h/24</p>
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <Card className="shadow-lg border-0">
-                <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Envoyez-nous un message
-                  </h2>
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="firstName">Prénom *</Label>
-                        <Input id="firstName" type="text" className="mt-1" required />
-                      </div>
-                      <div>
-                        <Label htmlFor="lastName">Nom *</Label>
-                        <Input id="lastName" type="text" className="mt-1" required />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="email">Email *</Label>
-                      <Input id="email" type="email" className="mt-1" required />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="phone">Téléphone</Label>
-                      <Input id="phone" type="tel" className="mt-1" />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="subject">Sujet *</Label>
-                      <Input id="subject" type="text" className="mt-1" required />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea 
-                        id="message" 
-                        className="mt-1 min-h-[120px]" 
-                        placeholder="Décrivez votre besoin ou votre question..."
-                        required 
-                      />
-                    </div>
-
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="text-sm text-gray-600">
-                        * Champs obligatoires. Vos données personnelles sont protégées et ne seront jamais communiquées à des tiers.
-                      </p>
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-red-600 hover:bg-red-700 text-white py-3"
-                      size="lg"
-                    >
-                      Envoyer le message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Appel rapide */}
+            <Card className="bg-gradient-to-br from-orange-50 to-red-50 cozy-shadow border-0 organic-border">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Besoin d'un devis urgent ?</h3>
+                <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                  Appelez-nous directement pour un traitement prioritaire de votre demande. 
+                  Notre équipe familiale vous accompagne avec le sourire !
+                </p>
+                <a 
+                  href="tel:+33184607893" 
+                  className="inline-flex items-center bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-xl font-semibold text-lg gentle-hover"
+                >
+                  <Phone className="w-5 h-5 mr-3" />
+                  Appel gratuit - 01 84 60 78 93
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="bg-gray-50 py-20">
+      {/* Section 2: Contact Form */}
+      <section className="py-16 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-            Notre Localisation
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-0">
-                {/* Placeholder for map - in a real implementation, you would integrate with a map service */}
-                <div className="h-96 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-red-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      23 rue de la Porte d'Aubervilliers
-                    </h3>
-                    <p className="text-gray-600">75018 Paris, France</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Directions */}
-            <Card className="shadow-lg border-0 mt-8">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Demandez votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">devis gratuit</span>
+              </h2>
+              <p className="text-lg text-gray-600">Nous vous recontactons sous 2h pendant les heures ouvrables</p>
+            </div>
+
+            <Card className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Comment nous trouver</h3>
-                <div className="grid md:grid-cols-2 gap-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-3">En métro :</h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• Ligne 7 : Porte d'Aubervilliers (5 min à pied)</li>
-                      <li>• Ligne 12 : Porte de la Chapelle (10 min à pied)</li>
-                    </ul>
+                    <Label htmlFor="name" className="text-gray-700 font-medium">Nom complet</Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="Votre nom"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="mt-2 border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl"
+                      required
+                    />
                   </div>
+
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-3">En voiture :</h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• Périphérique sortie Porte d'Aubervilliers</li>
-                      <li>• Parking disponible sur place</li>
-                    </ul>
+                    <Label htmlFor="phone" className="text-gray-700 font-medium">Téléphone</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="Votre numéro de téléphone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="mt-2 border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl"
+                      required
+                    />
                   </div>
+
+                  <div>
+                    <Label htmlFor="message" className="text-gray-700 font-medium">Message</Label>
+                    <textarea
+                      id="message"
+                      placeholder="Décrivez vos besoins (quantité, adresse de livraison...)"
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      className="mt-2 w-full h-32 px-3 py-2 border border-gray-300 rounded-xl focus:border-red-400 focus:ring-red-400/20 focus:outline-none resize-none"
+                      required
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white py-3 rounded-xl font-semibold text-lg gentle-hover"
+                  >
+                    Demandez votre devis gratuit
+                  </Button>
+                </form>
+
+                <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
+                  <p className="text-sm text-gray-600 text-center">
+                    <strong>Garantie familiale :</strong> Réponse personnalisée sous 2h pendant les heures ouvrables. 
+                    Vos données sont protégées et ne seront jamais communiquées à des tiers.
+                  </p>
                 </div>
               </CardContent>
             </Card>
