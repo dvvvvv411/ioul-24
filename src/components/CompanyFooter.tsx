@@ -10,7 +10,11 @@ const CompanyFooter = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-red-500 mb-4">Fioul-24</h3>
+              <img 
+                src="https://i.imgur.com/YsfubnI.png" 
+                alt="Fioul-24 Logo" 
+                className="h-8 w-auto mb-4"
+              />
               <p className="text-gray-300 leading-relaxed">
                 Votre partenaire de confiance pour la livraison de fioul domestique en Île-de-France.
                 Service rapide, prix compétitifs, qualité garantie.

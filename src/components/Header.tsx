@@ -30,9 +30,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="group">
-              <h1 className="text-3xl font-bold text-red-600 group-hover:text-red-700 transition-colors duration-300 transform group-hover:scale-105">
-                Fioul-24
-              </h1>
+              <img 
+                src="https://i.imgur.com/YsfubnI.png" 
+                alt="Fioul-24 Logo" 
+                className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+              />
             </Link>
           </div>
 
@@ -86,7 +88,11 @@ const Header = () => {
           {/* Centered Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
-              <h1 className="text-2xl font-bold text-red-600">Fioul-24</h1>
+              <img 
+                src="https://i.imgur.com/YsfubnI.png" 
+                alt="Fioul-24 Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 
