@@ -19,14 +19,11 @@ const NotreExpertise = () => {
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-red-200 to-orange-200 rounded-3xl overflow-hidden cozy-shadow">
               <img 
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
+                src="https://i.imgur.com/O7h8OZN.jpeg" 
                 alt="Équipe Fioul-24" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm font-medium">Notre équipe professionnelle</p>
-              </div>
             </div>
           </div>
 
