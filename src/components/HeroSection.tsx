@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -126,7 +127,7 @@ const HeroSection = () => {
       // Transform request body to match backend expectations
       const orderData = {
         shop_id: fiouelConfig.shopId,
-        product: selectedProduct.name,
+        product: selectedProduct.id, // Changed from selectedProduct.name to selectedProduct.id
         liters: liters,
         price_per_liter: selectedProduct.pricePerLiter,
         delivery_fee: deliveryFee,
