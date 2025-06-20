@@ -13,14 +13,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-orange-50">
       <Header />
-      <HeroSection />
-      <NosAvantages />
-      <NotreExpertise />
-      <ZoneLivraison />
-      <ProcessusCommande />
-      <PourquoiFioul24 />
-      <EngagementQualite />
-      <CompanyFooter />
+      <div className="pt-20">
+        <HeroSection />
+        <NosAvantages />
+        <NotreExpertise />
+        <ZoneLivraison />
+        <ProcessusCommande />
+        <PourquoiFioul24 />
+        <EngagementQualite />
+        <CompanyFooter />
+      </div>
     </div>
   );
 };
