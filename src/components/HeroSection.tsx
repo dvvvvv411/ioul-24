@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,6 +32,28 @@ const fiouelConfig = {
     minLiters: 1000,
     maxLiters: 20000
   }
+};
+
+const TypingAnimation = ({ text }: { text: string }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text]);
+
+  return (
+    <span className="block text-red-600">
+      {displayedText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
 };
 
 const HeroSection = () => {
@@ -75,7 +97,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Votre foyer mérite le
-                <span className="block text-red-600 animate-pulse"> meilleur fioul</span>
+                <TypingAnimation text=" meilleur fioul" />
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Commandez en toute confiance • Livraison soignée • Service personnalisé
