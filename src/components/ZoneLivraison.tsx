@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 
@@ -18,7 +19,7 @@ const ZoneLivraison = () => {
       {/* Background avec image de carte */}
       <div className="absolute inset-0">
         <img 
-          src="https://i.imgur.com/QifWs5P.jpeg" 
+          src="https://i.imgur.com/rgUkxY3.jpeg" 
           alt="Carte Île-de-France" 
           className="w-full h-full object-cover"
         />
