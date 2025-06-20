@@ -1,4 +1,3 @@
-
 import { Shield, Clock, Award, Star, CheckCircle } from "lucide-react";
 
 const EngagementQualite = () => {
@@ -27,7 +26,7 @@ const EngagementQualite = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
