@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -124,22 +123,14 @@ const HeroSection = () => {
       const selectedProduct = fiouelConfig.products[fuelType as keyof typeof fiouelConfig.products];
       const deliveryFee = liters >= fiouelConfig.delivery.freeDeliveryThreshold ? 0 : fiouelConfig.delivery.deliveryFee;
 
+      // Transform request body to match backend expectations
       const orderData = {
-        shopId: fiouelConfig.shopId,
-        product: {
-          id: selectedProduct.id,
-          name: selectedProduct.name,
-          pricePerLiter: selectedProduct.pricePerLiter
-        },
-        quantity: liters,
-        deliveryAddress: {
-          postalCode: postalCode.trim()
-        },
-        pricing: {
-          basePrice: liters * selectedProduct.pricePerLiter,
-          deliveryFee: deliveryFee,
-          totalPrice: calculatedPrice
-        }
+        shop_id: fiouelConfig.shopId,
+        product: selectedProduct.name,
+        liters: liters,
+        price_per_liter: selectedProduct.pricePerLiter,
+        delivery_fee: deliveryFee,
+        total_amount: calculatedPrice
       };
 
       console.log("Order data:", orderData);
