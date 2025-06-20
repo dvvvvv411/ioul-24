@@ -152,7 +152,7 @@ const ConditionsLivraison = () => {
                       <li>• Hauteur libre : 3,5 mètres</li>
                       <li>• Sol porteur pour 12 tonnes</li>
                       <li>• Distance max cuve : 30 mètres</li>
-                      <li>• Pas de marche arrière > 50m</li>
+                      <li>• Pas de marche arrière &gt; 50m</li>
                     </ul>
                   </div>
                   
@@ -160,9 +160,9 @@ const ConditionsLivraison = () => {
                     <h3 className="text-lg font-bold mb-3 text-red-600">✗ Accès impossible :</h3>
                     <ul className="space-y-2 text-sm">
                       <li>• Voies privées fermées</li>
-                      <li>• Portails < 3m de large</li>
+                      <li>• Portails &lt; 3m de large</li>
                       <li>• Terrain non stabilisé</li>
-                      <li>• Pente > 15%</li>
+                      <li>• Pente &gt; 15%</li>
                       <li>• Obstacles aériens</li>
                     </ul>
                   </div>
