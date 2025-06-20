@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -235,9 +236,9 @@ const HeroSection = () => {
                 Calculer mon devis personnalisé
               </Button>
 
-              {/* Price Display - Warm and welcoming */}
+              {/* Price Display - Updated to match site colors */}
               {calculatedPrice > 0 && (
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 space-y-3">
+                <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-xl p-6 space-y-3">
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Votre devis personnalisé</h3>
                     <p className="text-sm text-gray-600">Aucun frais caché, promis</p>
@@ -264,7 +265,7 @@ const HeroSection = () => {
                   </div>
                   
                   {liters < fiouelConfig.delivery.freeDeliveryThreshold && (
-                    <p className="text-sm text-blue-600 text-center bg-blue-50 p-2 rounded-lg">
+                    <p className="text-sm text-orange-600 text-center bg-orange-50 p-2 rounded-lg">
                       Livraison offerte à partir de {fiouelConfig.delivery.freeDeliveryThreshold}L
                     </p>
                   )}
