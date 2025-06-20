@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
 
-## Project info
+# Fioul24 - Livraison de Fioul Domestique
 
-**URL**: https://lovable.dev/projects/449bf5db-670a-4557-92a8-f4dd22c78de7
+Site web officiel de Fioul24, entreprise familiale spécialisée dans la livraison de fioul domestique en Île-de-France depuis 2009.
 
-## How can I edit this code?
+## À propos
 
-There are several ways of editing your application.
+Fioul24 est une entreprise familiale qui propose un service de livraison de fioul domestique rapide et fiable en Île-de-France. Nous nous engageons à offrir des prix transparents, un service personnalisé et une livraison gratuite à partir de 3000L.
 
-**Use Lovable**
+## Services
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/449bf5db-670a-4557-92a8-f4dd22c78de7) and start prompting.
+- Livraison de fioul domestique standard et premium
+- Livraison gratuite dès 3000L en Île-de-France
+- Service client familial et personnalisé
+- Devis en ligne gratuit et instantané
+- Conseils d'experts pour vos besoins en chauffage
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies utilisées
 
-**Use your preferred IDE**
+Ce site web est construit avec :
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- React Router
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Installation et développement
 
-Follow these steps:
+Pour installer et lancer le projet en local :
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Cloner le repository
+git clone <URL_DU_REPOSITORY>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Naviguer dans le dossier
+cd fioul24
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Installer les dépendances
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Lancer le serveur de développement
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Le site sera accessible sur `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Contact
 
-**Use GitHub Codespaces**
+- **Téléphone** : 01 84 60 78 93
+- **Email** : info@fioul-24.fr
+- **Site web** : https://fioul24.fr
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Licence
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/449bf5db-670a-4557-92a8-f4dd22c78de7) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2024 Fioul24. Tous droits réservés.
