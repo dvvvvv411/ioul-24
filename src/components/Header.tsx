@@ -33,7 +33,7 @@ const Header = () => {
               <img 
                 src="https://i.imgur.com/YsfubnI.png" 
                 alt="Fioul-24 Logo" 
-                className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </Link>
           </div>
@@ -91,7 +91,7 @@ const Header = () => {
               <img 
                 src="https://i.imgur.com/YsfubnI.png" 
                 alt="Fioul-24 Logo" 
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
           </div>
