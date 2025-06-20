@@ -59,10 +59,10 @@ const EngagementQualite = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-12">
+        <div className="bg-gradient-to-r from-warm-red to-warm-orange rounded-3xl p-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Nos certifications</h3>
-            <p className="text-gray-600">Des garanties reconnues pour votre tranquillité</p>
+            <h3 className="text-2xl font-bold text-white mb-4">Nos certifications</h3>
+            <p className="text-white/90">Des garanties reconnues pour votre tranquillité</p>
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-12">
@@ -71,7 +71,7 @@ const EngagementQualite = () => {
                 <div className="bg-white rounded-xl p-6 mb-3 cozy-shadow group-hover:shadow-lg transition-shadow duration-300">
                   <div className="text-3xl font-bold text-warm-orange mb-1">{badge.name}</div>
                 </div>
-                <p className="text-sm text-gray-600 font-medium">{badge.description}</p>
+                <p className="text-sm text-white/90 font-medium">{badge.description}</p>
               </div>
             ))}
           </div>
