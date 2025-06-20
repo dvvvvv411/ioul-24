@@ -4,8 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import NosAvantages from "@/components/NosAvantages";
 import NotreExpertise from "@/components/NotreExpertise";
 import ZoneLivraison from "@/components/ZoneLivraison";
-import TemoignagesClients from "@/components/TemoignagesClients";
-import NosTypesFioul from "@/components/NosTypesFioul";
 import ProcessusCommande from "@/components/ProcessusCommande";
 import PourquoiFioul24 from "@/components/PourquoiFioul24";
 import ContactRapide from "@/components/ContactRapide";
@@ -22,8 +20,6 @@ const Index = () => {
       <NosAvantages />
       <NotreExpertise />
       <ZoneLivraison />
-      <TemoignagesClients />
-      <NosTypesFioul />
       <ProcessusCommande />
       <PourquoiFioul24 />
       <ContactRapide />
