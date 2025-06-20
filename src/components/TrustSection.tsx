@@ -77,25 +77,26 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-25 via-gray-50 to-red-25">
-      {/* Subtle warm background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
+    <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
+      {/* Warm background elements with stronger colors */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
       </div>
 
       <div className="relative container mx-auto px-4">
         {/* Warm intro */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
-            <Users className="w-5 h-5 text-red-600" />
-            <span className="text-sm font-medium text-gray-700">L'équipe Fioul-24 à votre service</span>
+          <div className="inline-flex items-center space-x-2 bg-red-100/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
+            <Users className="w-5 h-5 text-red-700" />
+            <span className="text-sm font-medium text-red-800">L'équipe Fioul-24 à votre service</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Pourquoi nos clients 
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">nous font confiance</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Depuis 28 ans, nous chauffons les foyers d'Île-de-France avec la même passion : 
             vous offrir le meilleur service avec un sourire sincère.
           </p>
@@ -106,7 +107,7 @@ const TrustSection = () => {
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Notre approche familiale</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-orange-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
                   <div className={`bg-gradient-to-br ${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                     <feature.icon className="w-8 h-8 text-gray-700" />
@@ -114,7 +115,7 @@ const TrustSection = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -129,26 +130,26 @@ const TrustSection = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Rencontrez notre équipe
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               Des visages familiers pour un service personnalisé
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-red-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-200 to-red-200 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <span className="text-2xl">👤</span>
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h4>
                   <p className="text-red-600 font-medium mb-2">{member.role}</p>
                   {member.phone && (
-                    <a href={`tel:${member.phone}`} className="text-sm text-gray-600 hover:text-red-600 transition-colors block mb-2">
+                    <a href={`tel:${member.phone}`} className="text-sm text-gray-700 hover:text-red-600 transition-colors block mb-2">
                       {member.phone}
                     </a>
                   )}
-                  <p className="text-sm text-gray-600">{member.description}</p>
+                  <p className="text-sm text-gray-700">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -161,31 +162,31 @@ const TrustSection = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Ce que disent nos familles
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               Des témoignages authentiques de nos clients
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-amber-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  <p className="text-gray-800 mb-6 italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
-                  <div className="border-t border-gray-100 pt-6">
+                  <div className="border-t border-orange-200 pt-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full flex items-center justify-center">
                         <span className="text-xl">{testimonial.image}</span>
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                        <p className="text-sm text-gray-600">{testimonial.location}</p>
+                        <p className="text-sm text-gray-700">{testimonial.location}</p>
                         <p className="text-xs text-red-600 font-medium">{testimonial.years}</p>
                       </div>
                     </div>
@@ -197,31 +198,31 @@ const TrustSection = () => {
         </div>
 
         {/* Trust numbers with warmth */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
+        <div className="bg-gradient-to-br from-orange-100 to-red-100 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">28 ans à votre service</h3>
-            <p className="text-gray-600">Une confiance qui se mesure en chiffres</p>
+            <p className="text-gray-700">Une confiance qui se mesure en chiffres</p>
           </div>
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-red-600 mb-2">24h</div>
-              <p className="text-gray-700 font-medium">Délai maximum</p>
-              <p className="text-sm text-gray-500">Livraison garantie</p>
+              <p className="text-gray-800 font-medium">Délai maximum</p>
+              <p className="text-sm text-gray-600">Livraison garantie</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-red-600 mb-2">15 000+</div>
-              <p className="text-gray-700 font-medium">Familles satisfaites</p>
-              <p className="text-sm text-gray-500">Depuis 1995</p>
+              <p className="text-gray-800 font-medium">Familles satisfaites</p>
+              <p className="text-sm text-gray-600">Depuis 1995</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-red-600 mb-2">100%</div>
-              <p className="text-gray-700 font-medium">Satisfaction garantie</p>
-              <p className="text-sm text-gray-500">Ou remboursé</p>
+              <p className="text-gray-800 font-medium">Satisfaction garantie</p>
+              <p className="text-sm text-gray-600">Ou remboursé</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-red-600 mb-2">0€</div>
-              <p className="text-gray-700 font-medium">Frais cachés</p>
-              <p className="text-sm text-gray-500">Transparence totale</p>
+              <p className="text-gray-800 font-medium">Frais cachés</p>
+              <p className="text-sm text-gray-600">Transparence totale</p>
             </div>
           </div>
         </div>
