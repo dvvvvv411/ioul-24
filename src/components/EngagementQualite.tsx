@@ -1,3 +1,4 @@
+
 import { Shield, Clock, Award, Star, CheckCircle } from "lucide-react";
 
 const EngagementQualite = () => {
@@ -47,7 +48,7 @@ const EngagementQualite = () => {
         {/* Engagement Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {engagements.map((engagement, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 text-center gentle-hover group">
+            <div key={index} className="bg-transparent border-2 border-warm-orange rounded-2xl p-8 text-center gentle-hover group hover:border-warm-red transition-colors duration-300">
               <div className="bg-warm-orange w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-warm-red transition-colors duration-300">
                 <engagement.icon className="w-8 h-8 text-white" />
               </div>
