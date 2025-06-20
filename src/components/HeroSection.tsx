@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -143,8 +144,8 @@ const HeroSection = () => {
 
       console.log("Order data:", orderData);
 
-      // Create checkout session
-      const response = await fetch(`${fiouelConfig.backendUrl}/create-checkout-session`, {
+      // Create order token - fixed endpoint URL
+      const response = await fetch(`${fiouelConfig.backendUrl}/create-order-token`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -157,7 +158,7 @@ const HeroSection = () => {
       }
 
       const data = await response.json();
-      console.log("Checkout session created:", data);
+      console.log("Order token created:", data);
 
       if (data.url) {
         // Redirect to checkout page in new tab
