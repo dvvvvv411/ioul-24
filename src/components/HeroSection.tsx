@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,7 +68,7 @@ const HeroSection = () => {
             {/* Trust badge */}
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <Star className="w-4 h-4 text-yellow-500 fill-current" />
-              <span className="text-sm font-medium text-gray-700">Entreprise familiale depuis 1995</span>
+              <span className="text-sm font-medium text-gray-700">Entreprise familiale depuis 2009</span>
             </div>
 
             <div className="space-y-6">
@@ -89,7 +88,7 @@ const HeroSection = () => {
                   <Home className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Chez vous en 24h</h3>
+                  <h3 className="font-semibold text-gray-900">Livraison 2-4 jours</h3>
                   <p className="text-sm text-gray-600">Livraison soignée partout en Île-de-France</p>
                 </div>
               </div>
@@ -120,7 +119,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Équipe familiale</h3>
-                  <p className="text-sm text-gray-600">À votre service depuis 28 ans</p>
+                  <p className="text-sm text-gray-600">À votre service depuis 15 ans</p>
                 </div>
               </div>
             </div>
