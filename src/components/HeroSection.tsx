@@ -75,7 +75,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Votre foyer mérite le
-                <span className="block text-transparent bg-clip-text warm-gradient"> meilleur fioul</span>
+                <span className="block text-red-600 animate-pulse"> meilleur fioul</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Commandez en toute confiance • Livraison soignée • Service personnalisé
