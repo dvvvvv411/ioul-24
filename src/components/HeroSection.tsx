@@ -236,36 +236,36 @@ const HeroSection = () => {
                 Calculer mon devis personnalisé
               </Button>
 
-              {/* Price Display - Updated to match site colors */}
+              {/* Price Display - Fixed text contrast */}
               {calculatedPrice > 0 && (
                 <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-xl p-6 space-y-3">
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Votre devis personnalisé</h3>
-                    <p className="text-sm text-gray-600">Aucun frais caché, promis</p>
+                    <p className="text-sm text-gray-800">Aucun frais caché, promis</p>
                   </div>
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Prix du fioul:</span>
-                    <span className="font-medium">{(liters * fiouelConfig.products[fuelType as keyof typeof fiouelConfig.products].pricePerLiter).toFixed(2)}€</span>
+                    <span className="text-gray-900 font-medium">Prix du fioul:</span>
+                    <span className="font-semibold text-gray-900">{(liters * fiouelConfig.products[fuelType as keyof typeof fiouelConfig.products].pricePerLiter).toFixed(2)}€</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Livraison:</span>
-                    <span>
+                    <span className="text-gray-900 font-medium">Livraison:</span>
+                    <span className="font-semibold">
                       {liters >= fiouelConfig.delivery.freeDeliveryThreshold ? (
-                        <span className="text-green-600 font-semibold">Offerte!</span>
+                        <span className="text-green-700 font-bold">Offerte!</span>
                       ) : (
-                        `${fiouelConfig.delivery.deliveryFee}€`
+                        <span className="text-gray-900">{fiouelConfig.delivery.deliveryFee}€</span>
                       )}
                     </span>
                   </div>
-                  <hr className="border-gray-200" />
+                  <hr className="border-orange-300" />
                   <div className="flex justify-between items-center font-bold text-lg">
-                    <span>Total:</span>
-                    <span className="text-red-600">{calculatedPrice.toFixed(2)}€</span>
+                    <span className="text-gray-900">Total:</span>
+                    <span className="text-red-700 text-xl">{calculatedPrice.toFixed(2)}€</span>
                   </div>
                   
                   {liters < fiouelConfig.delivery.freeDeliveryThreshold && (
-                    <p className="text-sm text-orange-600 text-center bg-orange-50 p-2 rounded-lg">
+                    <p className="text-sm text-orange-800 font-medium text-center bg-orange-100 p-3 rounded-lg border border-orange-300">
                       Livraison offerte à partir de {fiouelConfig.delivery.freeDeliveryThreshold}L
                     </p>
                   )}
