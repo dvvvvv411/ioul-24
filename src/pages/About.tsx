@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import CompanyFooter from "@/components/CompanyFooter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,8 +35,8 @@ const About = () => {
     },
     {
       year: "2018",
-      title: "10 000 clients",
-      description: "Franchissement du cap des 10 000 familles."
+      title: "200 000 clients",
+      description: "Franchissement du cap des 200 000 familles."
     },
     {
       year: "2023",
