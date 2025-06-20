@@ -198,7 +198,7 @@ const Services = () => {
                   <Phone className="w-5 h-5" />
                   <span>01 84 60 78 93</span>
                 </a>
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-2xl transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-600 bg-transparent px-8 py-4 rounded-2xl transition-all duration-300">
                   Demander un rappel
                 </Button>
               </div>
