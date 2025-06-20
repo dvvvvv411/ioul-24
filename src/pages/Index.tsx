@@ -8,8 +8,6 @@ import ProcessusCommande from "@/components/ProcessusCommande";
 import PourquoiFioul24 from "@/components/PourquoiFioul24";
 import ContactRapide from "@/components/ContactRapide";
 import EngagementQualite from "@/components/EngagementQualite";
-import FAQRapides from "@/components/FAQRapides";
-import TrustSection from "@/components/TrustSection";
 import CompanyFooter from "@/components/CompanyFooter";
 
 const Index = () => {
@@ -24,8 +22,6 @@ const Index = () => {
       <PourquoiFioul24 />
       <ContactRapide />
       <EngagementQualite />
-      <FAQRapides />
-      <TrustSection />
       <CompanyFooter />
     </div>
   );
