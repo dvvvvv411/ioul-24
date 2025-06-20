@@ -29,9 +29,6 @@ const Header = () => {
             <Link to="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
               Contact
             </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              Actualités
-            </Link>
           </nav>
 
           {/* Phone and CTA */}
