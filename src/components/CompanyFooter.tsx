@@ -1,5 +1,6 @@
 
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CompanyFooter = () => {
   return (
@@ -96,18 +97,18 @@ const CompanyFooter = () => {
             </div>
 
             <div className="space-y-3 pt-4">
-              <a href="#" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
+              <Link to="/mentions-legales" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
                 Mentions légales
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
+              </Link>
+              <Link to="/politique-confidentialite" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
+              </Link>
+              <Link to="/cgv" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
                 CGV
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
-                Plan du site
-              </a>
+              </Link>
+              <Link to="/conditions-livraison" className="block text-gray-300 hover:text-red-400 transition-colors text-sm">
+                Conditions de livraison
+              </Link>
             </div>
           </div>
         </div>
