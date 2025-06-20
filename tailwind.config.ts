@@ -68,7 +68,10 @@ export default {
 				'warm-orange': '#f97316',
 				'warm-cream': '#fef7f0',
 				'warm-gray': '#f3f4f6',
-				'cozy-brown': '#78716c'
+				'cozy-brown': '#78716c',
+				// Extra light warm colors for backgrounds
+				'orange-25': '#fffbf7',
+				'red-25': '#fefbfb'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

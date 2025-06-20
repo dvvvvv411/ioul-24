@@ -77,11 +77,17 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-orange-25 via-gray-50 to-red-25">
+      {/* Subtle warm background elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      </div>
+
+      <div className="relative container mx-auto px-4">
         {/* Warm intro */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
+          <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
             <Users className="w-5 h-5 text-red-600" />
             <span className="text-sm font-medium text-gray-700">L'équipe Fioul-24 à votre service</span>
           </div>
@@ -100,7 +106,7 @@ const TrustSection = () => {
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Notre approche familiale</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
                   <div className={`bg-gradient-to-br ${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                     <feature.icon className="w-8 h-8 text-gray-700" />
@@ -130,9 +136,9 @@ const TrustSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <span className="text-2xl">👤</span>
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h4>
@@ -162,7 +168,7 @@ const TrustSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -174,7 +180,7 @@ const TrustSection = () => {
                   </p>
                   <div className="border-t border-gray-100 pt-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-orange-100 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center">
                         <span className="text-xl">{testimonial.image}</span>
                       </div>
                       <div>
@@ -191,7 +197,7 @@ const TrustSection = () => {
         </div>
 
         {/* Trust numbers with warmth */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">28 ans à votre service</h3>
             <p className="text-gray-600">Une confiance qui se mesure en chiffres</p>
