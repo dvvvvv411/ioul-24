@@ -77,18 +77,18 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
-      {/* Warm background elements with stronger colors */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+    <section className="py-20 bg-gradient-to-br from-orange-25 via-red-25 to-orange-25">
+      {/* Subtle warm background elements - less intense than HeroSection */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl"></div>
       </div>
 
       <div className="relative container mx-auto px-4">
         {/* Warm intro */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-red-100/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
+          <div className="inline-flex items-center space-x-2 bg-red-50/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm mb-6">
             <Users className="w-5 h-5 text-red-700" />
             <span className="text-sm font-medium text-red-800">L'équipe Fioul-24 à votre service</span>
           </div>
@@ -107,7 +107,7 @@ const TrustSection = () => {
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Notre approche familiale</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-orange-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-white/80 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
                   <div className={`bg-gradient-to-br ${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                     <feature.icon className="w-8 h-8 text-gray-700" />
@@ -137,7 +137,7 @@ const TrustSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-red-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-red-25/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 bg-gradient-to-br from-orange-200 to-red-200 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <span className="text-2xl">👤</span>
@@ -169,7 +169,7 @@ const TrustSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-amber-50/95 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
+              <Card key={index} className="bg-white/90 backdrop-blur-sm cozy-shadow border-0 organic-border gentle-hover">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -198,7 +198,7 @@ const TrustSection = () => {
         </div>
 
         {/* Trust numbers with warmth */}
-        <div className="bg-gradient-to-br from-orange-100 to-red-100 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
+        <div className="bg-gradient-to-br from-orange-50 to-red-50 backdrop-blur-sm rounded-3xl cozy-shadow p-12 max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">28 ans à votre service</h3>
             <p className="text-gray-700">Une confiance qui se mesure en chiffres</p>
