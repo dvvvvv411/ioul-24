@@ -45,6 +45,13 @@ const TypingAnimation = ({ text }: { text: string }) => {
         setCurrentIndex(prev => prev + 1);
       }, 150);
       return () => clearTimeout(timer);
+    } else {
+      // Animation complete, restart after 7 seconds
+      const restartTimer = setTimeout(() => {
+        setDisplayedText("");
+        setCurrentIndex(0);
+      }, 7000);
+      return () => clearTimeout(restartTimer);
     }
   }, [currentIndex, text]);
 
