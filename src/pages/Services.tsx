@@ -4,6 +4,7 @@ import CompanyFooter from "@/components/CompanyFooter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Truck, Phone, Heart, Shield, Users, Star, Droplets, Calculator } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -86,13 +87,13 @@ const Services = () => {
             Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">Services</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Découvrez pourquoi plus de 10 000 familles nous font confiance pour leur approvisionnement en fioul
+            Découvrez pourquoi plus de 100 000 familles nous font confiance pour leur approvisionnement en fioul
           </p>
 
           {/* Quick stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl">
-              <div className="text-2xl font-bold text-red-600">10 000+</div>
+              <div className="text-2xl font-bold text-red-600">100 000+</div>
               <div className="text-sm text-gray-600">Familles satisfaites</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl">
@@ -146,9 +147,6 @@ const Services = () => {
                         <div className="text-2xl font-bold text-red-600">
                           {service.price}
                         </div>
-                        <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white rounded-xl gentle-hover">
-                          En savoir plus
-                        </Button>
                       </div>
                     </div>
                   </div>
@@ -170,10 +168,12 @@ const Services = () => {
               Utilisez notre calculateur en ligne pour obtenir votre prix personnalisé instantanément
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-xl gentle-hover">
-                <Calculator className="w-5 h-5 mr-2" />
-                Calculer mon prix
-              </Button>
+              <Link to="/">
+                <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-xl gentle-hover">
+                  <Calculator className="w-5 h-5 mr-2" />
+                  Calculer mon prix
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
