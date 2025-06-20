@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,26 +10,31 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold text-red-600">Fioul-24</h1>
+            <Link to="/">
+              <h1 className="text-3xl font-bold text-red-600">Fioul-24</h1>
+            </Link>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
               Accueil
-            </a>
-            <a href="#" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            </Link>
+            <Link to="/services" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
               Services
-            </a>
-            <a href="#" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
-              Prix
-            </a>
-            <a href="#" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
               À propos
-            </a>
-            <a href="#" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
               Contact
-            </a>
+            </Link>
+            <Link to="/faq" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+              FAQ
+            </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-red-600 transition-colors font-medium">
+              Actualités
+            </Link>
           </nav>
 
           {/* Phone and CTA */}
