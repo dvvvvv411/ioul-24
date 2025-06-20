@@ -14,6 +14,10 @@ const ZoneLivraison = () => {
     { code: "95", name: "Val-d'Oise" }
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background avec image de carte */}
@@ -60,7 +64,10 @@ const ZoneLivraison = () => {
               ))}
             </div>
 
-            <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg gentle-hover">
+            <Button 
+              onClick={scrollToTop}
+              className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg gentle-hover"
+            >
               Vérifiez votre éligibilité
             </Button>
           </div>
