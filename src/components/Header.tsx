@@ -8,23 +8,17 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const scrollToPriceCalculator = () => {
+  const scrollToTop = () => {
     // If not on homepage, navigate first
     if (window.location.pathname !== '/') {
       navigate('/');
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
-        const priceCalculatorSection = document.querySelector('.price-calculator-section');
-        if (priceCalculatorSection) {
-          priceCalculatorSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
     } else {
-      // Already on homepage, just scroll
-      const priceCalculatorSection = document.querySelector('.price-calculator-section');
-      if (priceCalculatorSection) {
-        priceCalculatorSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Already on homepage, just scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -71,7 +65,7 @@ const Header = () => {
               </span>
             </div>
             <Button 
-              onClick={scrollToPriceCalculator}
+              onClick={scrollToTop}
               className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Commandez maintenant
@@ -139,7 +133,7 @@ const Header = () => {
               <Button 
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  scrollToPriceCalculator();
+                  scrollToTop();
                 }}
                 className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-6 py-2 font-semibold mx-2"
               >
