@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home, Heart, Shield, Phone, Users, Star } from "lucide-react";
+import { Home, Heart, Shield, Phone, Users, Star, AlertCircle } from "lucide-react";
 
 const fiouelConfig = {
   shopId: "acefaf14-6b4c-41bd-b172-133b27b9983f",
@@ -67,6 +67,34 @@ const HeroSection = () => {
   const [liters, setLiters] = useState(1000);
   const [fuelType, setFuelType] = useState("standard");
   const [calculatedPrice, setCalculatedPrice] = useState(0);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+
+    // Validate postal code
+    if (!postalCode.trim()) {
+      newErrors.postalCode = "Le code postal est requis";
+    } else if (!/^\d{5}$/.test(postalCode.trim())) {
+      newErrors.postalCode = "Code postal invalide (5 chiffres requis)";
+    }
+
+    // Validate liters
+    if (liters < fiouelConfig.limits.minLiters) {
+      newErrors.liters = `Minimum ${fiouelConfig.limits.minLiters}L requis`;
+    } else if (liters > fiouelConfig.limits.maxLiters) {
+      newErrors.liters = `Maximum ${fiouelConfig.limits.maxLiters}L autorisé`;
+    }
+
+    // Validate calculated price
+    if (calculatedPrice <= 0) {
+      newErrors.price = "Veuillez calculer le prix avant de commander";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const calculatePrice = () => {
     const selectedProduct = fiouelConfig.products[fuelType as keyof typeof fiouelConfig.products];
@@ -74,11 +102,76 @@ const HeroSection = () => {
     const deliveryFee = liters >= fiouelConfig.delivery.freeDeliveryThreshold ? 0 : fiouelConfig.delivery.deliveryFee;
     const totalPrice = basePrice + deliveryFee;
     setCalculatedPrice(totalPrice);
+    
+    // Clear price error if it exists
+    if (errors.price) {
+      setErrors(prev => ({ ...prev, price: "" }));
+    }
   };
 
   const handleOrder = async () => {
-    console.log("Commande:", { postalCode, liters, fuelType, price: calculatedPrice });
-    alert("Nous préparons votre devis personnalisé...");
+    console.log("Starting order process...");
+    
+    if (!validateForm()) {
+      console.log("Form validation failed:", errors);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const selectedProduct = fiouelConfig.products[fuelType as keyof typeof fiouelConfig.products];
+      const deliveryFee = liters >= fiouelConfig.delivery.freeDeliveryThreshold ? 0 : fiouelConfig.delivery.deliveryFee;
+
+      const orderData = {
+        shopId: fiouelConfig.shopId,
+        product: {
+          id: selectedProduct.id,
+          name: selectedProduct.name,
+          pricePerLiter: selectedProduct.pricePerLiter
+        },
+        quantity: liters,
+        deliveryAddress: {
+          postalCode: postalCode.trim()
+        },
+        pricing: {
+          basePrice: liters * selectedProduct.pricePerLiter,
+          deliveryFee: deliveryFee,
+          totalPrice: calculatedPrice
+        }
+      };
+
+      console.log("Order data:", orderData);
+
+      // Create checkout session
+      const response = await fetch(`${fiouelConfig.backendUrl}/create-checkout-session`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Checkout session created:", data);
+
+      if (data.url) {
+        // Redirect to checkout page in new tab
+        window.open(data.url, '_blank');
+      } else {
+        throw new Error('No checkout URL received');
+      }
+
+    } catch (error) {
+      console.error('Order submission failed:', error);
+      alert('Une erreur est survenue lors de la création de votre commande. Veuillez réessayer ou nous contacter.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -183,9 +276,20 @@ const HeroSection = () => {
                   type="text"
                   placeholder="Ex: 75001"
                   value={postalCode}
-                  onChange={(e) => setPostalCode(e.target.value)}
-                  className="border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50"
+                  onChange={(e) => {
+                    setPostalCode(e.target.value);
+                    if (errors.postalCode) {
+                      setErrors(prev => ({ ...prev, postalCode: "" }));
+                    }
+                  }}
+                  className={`border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50 ${errors.postalCode ? 'border-red-500' : ''}`}
                 />
+                {errors.postalCode && (
+                  <div className="flex items-center space-x-2 text-red-600 text-sm">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>{errors.postalCode}</span>
+                  </div>
+                )}
               </div>
 
               {/* Liters */}
@@ -199,9 +303,20 @@ const HeroSection = () => {
                   min={fiouelConfig.limits.minLiters}
                   max={fiouelConfig.limits.maxLiters}
                   value={liters}
-                  onChange={(e) => setLiters(Number(e.target.value))}
-                  className="border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50"
+                  onChange={(e) => {
+                    setLiters(Number(e.target.value));
+                    if (errors.liters) {
+                      setErrors(prev => ({ ...prev, liters: "" }));
+                    }
+                  }}
+                  className={`border-gray-300 focus:border-red-400 focus:ring-red-400/20 rounded-xl bg-gray-50 ${errors.liters ? 'border-red-500' : ''}`}
                 />
+                {errors.liters && (
+                  <div className="flex items-center space-x-2 text-red-600 text-sm">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>{errors.liters}</span>
+                  </div>
+                )}
               </div>
 
               {/* Fuel Type - Improved contrast */}
@@ -264,6 +379,14 @@ const HeroSection = () => {
                 Calculer mon devis personnalisé
               </Button>
 
+              {/* Price validation error */}
+              {errors.price && (
+                <div className="flex items-center space-x-2 text-red-600 text-sm">
+                  <AlertCircle className="w-4 h-4" />
+                  <span>{errors.price}</span>
+                </div>
+              )}
+
               {/* Price Display - Fixed text contrast */}
               {calculatedPrice > 0 && (
                 <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-xl p-6 space-y-3">
@@ -304,9 +427,10 @@ const HeroSection = () => {
               {calculatedPrice > 0 && (
                 <Button 
                   onClick={handleOrder}
-                  className="w-full warm-gradient hover:shadow-lg text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1"
+                  disabled={isSubmitting}
+                  className="w-full warm-gradient hover:shadow-lg text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Recevez votre devis personnalisé
+                  {isSubmitting ? "Préparation de votre commande..." : "Commandez maintenant"}
                 </Button>
               )}
 
